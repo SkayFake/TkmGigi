@@ -10,16 +10,18 @@
             padding: 0;
             height: 100%;
             display: flex;
-            justify-content: center; 
-            align-items: center;    
-            background: black;      
-            filter: grayscale(100%); 
-            overflow: hidden;      
+            justify-content: center;
+            align-items: center;
+            background: black;
+            filter: grayscale(100%);
+            overflow: hidden;
+            position: relative; 
         }
 
         .tiktok-embed {
-            width: 90%;   
-            height: 80%;  
+            width: 90%;
+            height: 80%;
+            z-index: 1; 
         }
 
      
@@ -30,21 +32,25 @@
             width: 100%;
             height: 100%;
             pointer-events: none; 
+            z-index: 0;
         }
+
         .drop {
             position: absolute;
             bottom: 100%;
             width: 2px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.5); 
+            background: rgba(255, 255, 255, 0.5);
             animation: fall linear infinite;
         }
+
         @keyframes fall {
             to {
-                transform: translateY(100vh);
+                transform: translateY(100vh); 
             }
         }
-     
+
+      
         .rain .drop:nth-child(1) { left: 10%; animation-duration: 1.2s; }
         .rain .drop:nth-child(2) { left: 20%; animation-duration: 1.5s; }
         .rain .drop:nth-child(3) { left: 30%; animation-duration: 1.1s; }
@@ -58,18 +64,19 @@
     </style>
 </head>
 <body>
+
+   
     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@cryingcatv99/video/7345201946631916808" data-video-id="7345201946631916808" style="max-width: 100%; height: 100%;">
         <section>
             <a target="_blank" title="@cryingcatv99" href="https://www.tiktok.com/@cryingcatv99">@cryingcatv99</a>
             <p>Texto del video</p>
-            <a href="https://www.tiktok.com/@cryingcatv99/video/7345201946631916808">Ver el video</a>
+            <a href="https://www.tiktok.com/@cryingcatv99/video/7345201946631916808">Ver el video en TikTok</a>
         </section>
     </blockquote>
     <script async src="https://www.tiktok.com/embed.js"></script>
 
-   
+  
     <div class="rain">
-        
         <div class="drop"></div>
         <div class="drop"></div>
         <div class="drop"></div>
@@ -82,7 +89,6 @@
         <div class="drop"></div>
     </div>
 
-    
 </body>
 </html>
 
