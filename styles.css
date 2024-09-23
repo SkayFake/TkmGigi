@@ -1,13 +1,11 @@
-
 body {
     margin: 0;
     height: 100vh;
     overflow: hidden;
-    background-color: #D8BFD8; /
+    background-color: #D8BFD8;
     font-family: Arial, sans-serif;
     position: relative;
 }
-
 
 .balloon-container {
     position: absolute;
@@ -17,7 +15,6 @@ body {
     height: 100%;
     z-index: 1;
 }
-
 
 .balloon {
     position: absolute;
@@ -42,18 +39,15 @@ body {
     z-index: -1;
 }
 
-
 .balloon:nth-child(2) { left: 20%; animation-duration: 6s; background-color: yellow; }
 .balloon:nth-child(3) { left: 40%; animation-duration: 7s; background-color: green; }
 .balloon:nth-child(4) { left: 60%; animation-duration: 8s; background-color: blue; }
 .balloon:nth-child(5) { left: 80%; animation-duration: 9s; background-color: purple; }
 
-
 @keyframes fall {
     0% { bottom: 100%; }
     100% { bottom: -100px; }
 }
-
 
 .serpentinas {
     position: absolute;
@@ -65,7 +59,6 @@ body {
     z-index: 0;
 }
 
-
 .sparkle {
     position: absolute;
     width: 10px;
@@ -75,7 +68,6 @@ body {
     animation: sparkle 3s ease-in-out infinite;
     z-index: 2;
 }
-
 
 .center-container {
     position: absolute;
@@ -91,13 +83,11 @@ body {
     max-width: 500px; 
 }
 
-
 .center-image {
     width: 300px; 
     height: auto;
     margin-bottom: 30px;
 }
-
 
 .text-container p {
     font-size: 22px; 
@@ -108,7 +98,6 @@ body {
     display: flex;
     justify-content: space-around;
 }
-
 
 button {
     padding: 10px 20px;
@@ -122,8 +111,9 @@ button:hover { background-color: #ddd; }
 
 button:active { transform: scale(0.98); }
 
-button:first-child { background-color: #4CAF50; color: white; } /* Botón "Sí" */
-button:last-child { background-color: #f44336; color: white; }  /* Botón "No" */
+button:first-child { background-color: #4CAF50; color: white; } 
+button:last-child { background-color: #f44336; color: white; } 
+
 
 @keyframes sparkle {
     0%, 100% { opacity: 0; transform: scale(0); }
@@ -134,5 +124,34 @@ button:last-child { background-color: #f44336; color: white; }  /* Botón "No" *
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+
+@media (max-width: 600px) {
+    .center-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .center-image {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .text-container p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .balloon {
+        width: 40px;
+        height: 60px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
 
 
