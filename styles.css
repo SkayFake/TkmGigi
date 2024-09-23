@@ -1,0 +1,138 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #D8BFD8; /
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+
+.balloon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+.balloon {
+    position: absolute;
+    bottom: 100%;
+    width: 50px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50%;
+    animation: fall 5s linear infinite;
+    z-index: 1;
+}
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background-color: #555;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+
+.balloon:nth-child(2) { left: 20%; animation-duration: 6s; background-color: yellow; }
+.balloon:nth-child(3) { left: 40%; animation-duration: 7s; background-color: green; }
+.balloon:nth-child(4) { left: 60%; animation-duration: 8s; background-color: blue; }
+.balloon:nth-child(5) { left: 80%; animation-duration: 9s; background-color: purple; }
+
+
+@keyframes fall {
+    0% { bottom: 100%; }
+    100% { bottom: -100px; }
+}
+
+
+.serpentinas {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    animation: twirl 2s linear infinite;
+    z-index: 0;
+}
+
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    animation: sparkle 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+
+.center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 50px; 
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+    z-index: 5; 
+    max-width: 500px; 
+}
+
+
+.center-image {
+    width: 300px; 
+    height: auto;
+    margin-bottom: 30px;
+}
+
+
+.text-container p {
+    font-size: 22px; 
+    margin-bottom: 30px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover { background-color: #ddd; }
+
+button:active { transform: scale(0.98); }
+
+button:first-child { background-color: #4CAF50; color: white; } /* Botón "Sí" */
+button:last-child { background-color: #f44336; color: white; }  /* Botón "No" */
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes twirl {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+

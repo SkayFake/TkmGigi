@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0; 
+            height: 100vh; 
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            background-color: black; 
+            overflow: hidden; 
+        }
+        video {
+            width: 100vw; 
+            height: 100vh; 
+            object-fit: cover; 
+            border: none;
+            outline: none; 
+            margin: 0; 
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+    <video id="miVideo" controls>
+        <source src="0920.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <script>
+       
+        window.onload = function() {
+            const video = document.getElementById('miVideo');
+            video.play(); 
+
+        
+            video.addEventListener('playing', () => {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) { 
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) { 
+                    video.msRequestFullscreen();
+                }
+            });
+        };
+    </script>
+
+
+</body>
+</html>
+
