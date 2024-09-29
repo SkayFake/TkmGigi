@@ -45,18 +45,17 @@
 </head>
 <body>
 
+
     <video id="miVideo" controls muted>
-        <source src="video_1080p.mp4" type="video/mp4" data-resolution="1080">
-        <source src="video_720p.mp4" type="video/mp4" data-resolution="720">
-        <source src="video_480p.mp4" type="video/mp4" data-resolution="480">
+        <source src="0920.mp4" type="video/mp4" data-resolution="1080">
+        <source src="0920_720.mp4" type="video/mp4" data-resolution="720">
         Tu navegador no soporta el elemento de video.
     </video>
 
-
+  
     <select id="resolutionSelector">
         <option value="1080">1080p</option>
         <option value="720">720p</option>
-        <option value="480">480p</option>
     </select>
 
     <script>
@@ -73,27 +72,18 @@
                         const currentTime = video.currentTime;  
                         video.pause();  
 
-                        
-                        video.src = sources[i].src;
+                        video.src = sources[i].src;  
                         video.load();  
                         video.currentTime = currentTime;  
-                        video.play();  
+                        video.play(); 
                         break;
                     }
-                }
-            });
-
-            video.addEventListener('canplay', () => {
-                if (video.requestFullscreen) {
-                    video.requestFullscreen();
-                } else if (video.webkitRequestFullscreen) {
-                    video.webkitRequestFullscreen();
-                } else if (video.msRequestFullscreen) {
-                    video.msRequestFullscreen();
                 }
             });
         };
     </script>
 </body>
 </html>
+
+
 
